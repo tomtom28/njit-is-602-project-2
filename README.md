@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/tomtom28/njit-is-602-project-2.svg?branch=master)](https://travis-ci.com/tomtom28/njit-is-602-project-2)
+
+
 # IS 601 - Project 2
 A Test Driven Python Statistical Calculator
 
