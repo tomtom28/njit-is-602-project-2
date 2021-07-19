@@ -33,3 +33,17 @@ def mode(data):
             current_mode = elem
             current_max = data.count(elem)
     return current_mode
+
+
+def variance(data):
+    n = len(data)
+    x_bar = mean(data)
+    sum_squared = 0
+    for x_i in data:
+        sum_squared += square(x_i - x_bar)
+
+    return division(n-1, sum_squared)
+
+
+def std_dev(data):
+    return square_root(variance(data))

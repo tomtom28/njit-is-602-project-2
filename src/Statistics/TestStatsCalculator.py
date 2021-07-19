@@ -77,6 +77,16 @@ class MyTestCase(unittest.TestCase):
         expected_value = 2
         self.assertEqual(self.calculator.mode(test_arr), expected_value)
 
+    def test_stats_calculator_variance(self):
+        test_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        expected_value = 7.5
+        self.assertEqual(self.calculator.variance(test_arr), expected_value)
+
+    def test_stats_calculator_std_dev(self):
+        test_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        expected_value = 2.6457513110645907
+        self.assertEqual(self.calculator.std_dev(test_arr), expected_value)
+
 
 if __name__ == '__main__':
     unittest.main()

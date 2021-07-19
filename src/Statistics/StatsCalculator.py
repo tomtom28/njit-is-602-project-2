@@ -18,3 +18,11 @@ class StatsCalculator(Calculator):
     def mode(self, a):
         self.result = mode(a)
         return self.result
+
+    def variance(self, a):
+        self.result = variance(a)
+        return self.result
+
+    def std_dev(self, a):
+        self.result = std_dev(a)
+        return self.result
