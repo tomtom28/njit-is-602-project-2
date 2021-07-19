@@ -50,6 +50,33 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), int(row['Result']))
             self.assertEqual(self.calculator.result, int(row['Result']))
 
+    # ------------------------------------------------------------------------------------------------------------------
+
+    def test_stats_calculator_mean_divide_by_zero(self):
+        test_arr = []  # empty array will give divide by zero error
+        with self.assertRaises(ZeroDivisionError):
+            self.calculator.mean(test_arr)
+
+    def test_stats_calculator_mean_str(self):
+        test_arr = [1, 2, "three"]  # bad (string) input
+        with self.assertRaises(ValueError):
+            self.calculator.mean(test_arr)
+
+    def test_stats_calculator_mean(self):
+        test_arr = [1, 2, 3, 4, 5, 6]
+        expected_value = 3.5
+        self.assertEqual(self.calculator.mean(test_arr), expected_value)
+
+    def test_stats_calculator_median(self):
+        test_arr = [1, 2, 3, 4, 5]
+        expected_value = 3
+        self.assertEqual(self.calculator.median(test_arr), expected_value)
+
+    def test_stats_calculator_mode(self):
+        test_arr = [2, 2, 3, 1, 2, 1, 4]
+        expected_value = 2
+        self.assertEqual(self.calculator.mode(test_arr), expected_value)
+
 
 if __name__ == '__main__':
     unittest.main()
